@@ -1,0 +1,6 @@
+.jquery_slideshow .jqs-slide { position: relative;}
+.jquery_slideshow .jqs-bottom {position: absolute; bottom: 0; left:0; right:0; color:#fff; background:transparent url('images/1x1-70.png'); padding: 5px;}
+.jquery_slideshow .jqs-field-title { font-weight: bold;  }
+.jquery_slideshow .jqs-field-count { color: #ccc; text-align: right;}
+.jqs-controls { margin-top: 5px; padding:0;}
+.jqs-controls li { display: inline;}
