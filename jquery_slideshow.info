@@ -1,9 +1,9 @@
-// $Id: jquery_slideshow.info,v 1.2 2009/06/24 17:53:27 spydor Exp $
-
+; $Id$
 name = Jquery Slideshow
-description = "Create photo gallery slide shows using the cycle plugin for Jquery and imagefields"
-package = "User Interface"
+description = Create photo gallery slide shows using the cycle plugin for Jquery and imagefields
+package = User Interface
 dependencies[] = jquery_plugin
+dependencies[] = jquery_update
 dependencies[] = imagecache
 dependencies[] = imagefield
 core = 6.x
