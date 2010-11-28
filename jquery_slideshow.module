@@ -137,15 +137,15 @@ function jquery_slideshow_admin() {
     '#type' => 'select',
     '#title' => t('Transition Speed'),
     '#description' => t('How fast do you want the transition to take (milliseconds).'),
-    '#options' => drupal_map_assoc(array(500, 1000, 1500, 2000)),
+    '#options' => drupal_map_assoc(array(0, 500, 1000, 1500, 2000)),
     '#default_value' => variable_get('jquery_slideshow_speed', 500),
     );
 
   $form['jquery_slideshow_timeout'] = array(
     '#type' => 'select',
     '#title' => t('Timeout'),
-    '#description' => t('How long to pause on each photo (milliseconds).'),
-    '#options' => drupal_map_assoc(array(1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000)),
+    '#description' => t('How long to pause on each photo (milliseconds). Choose 0 for a manual slideshow.'),
+    '#options' => drupal_map_assoc(array(0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000)),
     '#default_value' => variable_get('jquery_slideshow_timeout', 4000),
     );
 
@@ -201,11 +201,11 @@ function _jquery_slideshow_get_settings($jq_slideshow_id, $preset) {
   drupal_add_js(drupal_get_path('module', 'jquery_slideshow') . '/jquery_slideshow.js');
   drupal_add_js(array('jqueryslideshow' => array(
       $jq_slideshow_id => array(
-        'width' => $data['width'],
-        'height' => $data['height'],
+        //'width' => $data['width'],
+        //'height' => $data['height'],
         'fx' => variable_get('jquery_slideshow_effect', 'fade'),
-        'speed' => variable_get('jquery_slideshow_speed', 500),
-        'timeout' => variable_get('jquery_slideshow_timeout', 4000),
+        'speed' => (int)variable_get('jquery_slideshow_speed', 500),
+        'timeout' => (int)variable_get('jquery_slideshow_timeout', 4000),
         'next' => '#jqs-next-slide',
         'prev' => '#jqs-prev-slide'
       ),
